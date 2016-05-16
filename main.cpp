@@ -17,7 +17,6 @@ int sock_fd;
 struct msghdr msg;
 
 
-int send_hello();
 int send_to_kern(std::string);
 
 int main(int argc, const char* argv[]) {
@@ -36,10 +35,7 @@ int main(int argc, const char* argv[]) {
         std::cout << "Adding a battery" << std::endl;
     } else if (command == "test"){
         std::cout << "Testing my commands here" << std::endl;
-        send_to_kern("Gee thanks!");
-        send_to_kern("Some stuff");
-        send_to_kern("Blah Blah");
-        send_to_kern("WOOO");
+        send_to_kern("add status health present tech cap volt");
     } else std::cout << "Try Again" << std::endl;
 
 }
