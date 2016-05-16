@@ -35,7 +35,29 @@ int main(int argc, const char* argv[]) {
         std::cout << "Adding a battery" << std::endl;
     } else if (command == "test"){
         std::cout << "Testing my commands here" << std::endl;
-        send_to_kern("add status health present tech cap volt");
+    } else if (command == "charge1"){
+        std::cout << "Charging Battery 1" << std::endl;
+        send_to_kern("c1");
+
+    } else if (command == "charge2"){
+        std::cout << "Charging Battery 2" << std::endl;
+        send_to_kern("c2");
+
+    } else if (command == "discharge1"){
+        std::cout << "Discharging Battery 1" << std::endl;
+        send_to_kern("d1");
+
+    } else if (command == "discharge2"){
+        std::cout << "Discharging Battery 2" << std::endl;
+        send_to_kern("d2");
+
+    } else if (command == "kill1"){
+        std::cout << "Killing Battery 1" << std::endl;
+        send_to_kern("k1");
+
+    } else if (command == "kill2"){
+        std::cout << "Killing Battery 2" << std::endl;
+        send_to_kern("k2");
     } else std::cout << "Try Again" << std::endl;
 
 }
@@ -124,3 +146,4 @@ int send_hello(){
     printf("Received message payload: %s\n", NLMSG_DATA(nlh));
     close(sock_fd);
 }
+
